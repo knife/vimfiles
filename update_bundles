@@ -21,12 +21,13 @@ git_bundles = [
   "git://github.com/vim-ruby/vim-ruby.git",
   "git://github.com/jamis/fuzzyfinder_textmate",
   "git://github.com/vim-scripts/FuzzyFinder",
-  "git://github.com/vim-scripts/L9"
+  "git://github.com/vim-scripts/L9",
+  "git://github.com/vim-scripts/VimClojure",
+  "git://github.com/kchmck/vim-coffee-script"
 ]
 
 vim_org_scripts = [
   ["IndexedSearch", "7062",  "plugin"],
-  ["gist",          "12732", "plugin"],
   ["jquery",        "12107", "syntax"],
 ]
 

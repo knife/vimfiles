@@ -108,7 +108,7 @@ class VimRubyDebugger
         log("Putting message to rdebug-ide: #{message}")
         @rdebug.puts(message)
         # Start command doesn't return any response, so send message immediatly
-        send_message if message == 'start'
+        send_message if message.strip == 'start'
       else
         send_message
       end
@@ -168,7 +168,8 @@ class VimRubyDebugger
     def log(string)
       if @params[:debug_mode] == '1'
         File.open(@params[:logger_file], 'a') do |f|
-          f.puts 'Ruby_debugger.rb, ' + Time.now.strftime("%H:%M:%S") + ': ' + string
+          # match vim redir style new lines, rather than trailing
+          f << "\nRuby_debugger.rb, #{Time.now.strftime("%H:%M:%S")} : #{string.chomp}"
         end
       end
     end
